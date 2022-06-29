@@ -1,0 +1,823 @@
+
+Applications Memory Usage (kB):
+Uptime: 105717 Realtime: 105705
+
+** MEMINFO in pid 2846 [org.mozilla.firefox] **
+                   Pss  Private  Private  Swapped     Heap     Heap     Heap
+                 Total    Dirty    Clean    Dirty     Size    Alloc     Free
+                ------   ------   ------   ------   ------   ------   ------
+  Native Heap    12746    12668        0        0    25728    19807     5920
+  Dalvik Heap    16958    16532        0        0    35482    31039     4443
+ Dalvik Other     2798     2796        0        0                           
+        Stack     1032     1032        0        0                           
+       Ashmem      260       60        0        0                           
+      Gfx dev     4980     4980        0        0                           
+    Other dev        9        0        8        0                           
+     .so mmap     7380     3348     3284        0                           
+    .apk mmap     2107        0     1312        0                           
+    .dex mmap    10760        4     8112        0                           
+    .oat mmap     3115        0     1816        0                           
+    .art mmap     2581     1312      184        0                           
+   Other mmap      442       12      344        0                           
+   EGL mtrack    24000    24000        0        0                           
+      Unknown    40606    40604        0        0                           
+        TOTAL   129774   107348    15060        0    61210    50846    10363
+ 
+ App Summary
+                       Pss(KB)
+                        ------
+           Java Heap:    18028
+         Native Heap:    12668
+                Code:    17876
+               Stack:     1032
+            Graphics:    28980
+       Private Other:    43824
+              System:     7366
+ 
+               TOTAL:   129774      TOTAL SWAP (KB):        0
+ 
+ Objects
+               Views:      133         ViewRootImpl:        2
+         AppContexts:        4           Activities:        1
+              Assets:        2        AssetManagers:        4
+       Local Binders:       30        Proxy Binders:       28
+       Parcel memory:       11         Parcel count:       43
+    Death Recipients:        4      OpenSSL Sockets:        1
+ 
+ SQL
+         MEMORY_USED:     1470
+  PAGECACHE_OVERFLOW:      352          MALLOC_SIZE:       62
+ 
+ DATABASES
+      pgsz     dbsz   Lookaside(b)          cache  Dbname
+         4       32             19         0/18/2  /data/user/0/org.mozilla.firefox/databases/manifests
+         1        2                         0/0/0    (attached) temp
+         4       32             26         3/18/4  /data/user/0/org.mozilla.firefox/databases/manifests (1)
+         4       76            404     295/247/25  /data/user/0/org.mozilla.firefox/databases/androidx.work.workdb
+         1        4                         0/0/0    (attached) temp
+         4       76             35        12/20/5  /data/user/0/org.mozilla.firefox/databases/androidx.work.workdb (1)
+         4       16             27        24/19/5  /data/user/0/org.mozilla.firefox/databases/__leanplum.db
+         4       24             19         0/18/2  /data/user/0/org.mozilla.firefox/databases/top_sites
+         1        2                         0/0/0    (attached) temp
+         4       24             34         3/18/4  /data/user/0/org.mozilla.firefox/databases/top_sites (1)
+         4       24             37         3/33/5  /data/user/0/org.mozilla.firefox/databases/recently_closed_tabs
+         1        4                         0/0/0    (attached) temp
+         4       24             23         2/17/3  /data/user/0/org.mozilla.firefox/databases/recently_closed_tabs (1)
+         4       32             40         4/41/6  /data/user/0/org.mozilla.firefox/databases/tab_collections
+         1        5                         0/0/0    (attached) temp
+         4       32             23         2/18/3  /data/user/0/org.mozilla.firefox/databases/tab_collections (1)
+         4       24             22         1/27/3  /data/user/0/org.mozilla.firefox/databases/mozac_downloads_database
+         1        3                         0/0/0    (attached) temp
+         4       24             40         3/18/4  /data/user/0/org.mozilla.firefox/databases/mozac_downloads_database (1)
+1624834537
+******************************
+Applications Memory Usage (kB):
+Uptime: 110865 Realtime: 110853
+
+** MEMINFO in pid 2846 [org.mozilla.firefox] **
+                   Pss  Private  Private  Swapped     Heap     Heap     Heap
+                 Total    Dirty    Clean    Dirty     Size    Alloc     Free
+                ------   ------   ------   ------   ------   ------   ------
+  Native Heap    13857    13768        0        0    26496    22574     3921
+  Dalvik Heap    23662    23196        0        0    37531    33805     3726
+ Dalvik Other     2641     2640        0        0                           
+        Stack     1196     1196        0        0                           
+       Ashmem     9684       44     4424        0                           
+      Gfx dev    20712    20712        0        0                           
+    Other dev        9        0        8        0                           
+     .so mmap    13309     3348     4212        0                           
+    .apk mmap     1120        0       96        0                           
+    .ttf mmap        8        0        0        0                           
+    .dex mmap     9344        4     7472        0                           
+    .oat mmap     3026        0      944        0                           
+    .art mmap     2508     1404        0        0                           
+   Other mmap      586        8      496        0                           
+   EGL mtrack    61752    61752        0        0                           
+      Unknown    42218    42216        0        0                           
+        TOTAL   205632   170288    17652        0    64027    56379     7647
+ 
+ App Summary
+                       Pss(KB)
+                        ------
+           Java Heap:    24600
+         Native Heap:    13768
+                Code:    16076
+               Stack:     1196
+            Graphics:    82464
+       Private Other:    49836
+              System:    17692
+ 
+               TOTAL:   205632      TOTAL SWAP (KB):        0
+ 
+ Objects
+               Views:      137         ViewRootImpl:        1
+         AppContexts:        7           Activities:        1
+              Assets:        2        AssetManagers:        4
+       Local Binders:       37        Proxy Binders:       35
+       Parcel memory:       13         Parcel count:       53
+    Death Recipients:        4      OpenSSL Sockets:        1
+ 
+ SQL
+         MEMORY_USED:     1658
+  PAGECACHE_OVERFLOW:      384          MALLOC_SIZE:       62
+ 
+ DATABASES
+      pgsz     dbsz   Lookaside(b)          cache  Dbname
+         4       24             19         0/18/2  /data/user/0/org.mozilla.firefox/databases/site_permissions_database
+         1        2                         0/0/0    (attached) temp
+         4       24             45         5/18/4  /data/user/0/org.mozilla.firefox/databases/site_permissions_database (1)
+         4       32             19         0/23/2  /data/user/0/org.mozilla.firefox/databases/manifests
+         1        2                         0/0/0    (attached) temp
+         4       32             26         3/21/4  /data/user/0/org.mozilla.firefox/databases/manifests (1)
+         4       76            404     295/252/25  /data/user/0/org.mozilla.firefox/databases/androidx.work.workdb
+         1        4                         0/0/0    (attached) temp
+         4       76             35        12/23/5  /data/user/0/org.mozilla.firefox/databases/androidx.work.workdb (1)
+         4       16             27        24/22/5  /data/user/0/org.mozilla.firefox/databases/__leanplum.db
+         4       24             19         0/23/2  /data/user/0/org.mozilla.firefox/databases/top_sites
+         1        2                         0/0/0    (attached) temp
+         4       24             34         3/21/4  /data/user/0/org.mozilla.firefox/databases/top_sites (1)
+         4       24             37         3/38/5  /data/user/0/org.mozilla.firefox/databases/recently_closed_tabs
+         1        4                         0/0/0    (attached) temp
+         4       24             23         2/20/3  /data/user/0/org.mozilla.firefox/databases/recently_closed_tabs (1)
+         4       32             40         8/50/6  /data/user/0/org.mozilla.firefox/databases/tab_collections
+         1        5                         0/0/0    (attached) temp
+         4       32             23         2/21/3  /data/user/0/org.mozilla.firefox/databases/tab_collections (1)
+         4       24             22         1/32/3  /data/user/0/org.mozilla.firefox/databases/mozac_downloads_database
+         1        3                         0/0/0    (attached) temp
+         4       24             40         3/21/4  /data/user/0/org.mozilla.firefox/databases/mozac_downloads_database (1)
+1624834542
+******************************
+Applications Memory Usage (kB):
+Uptime: 116072 Realtime: 116060
+
+** MEMINFO in pid 2846 [org.mozilla.firefox] **
+                   Pss  Private  Private  Swapped     Heap     Heap     Heap
+                 Total    Dirty    Clean    Dirty     Size    Alloc     Free
+                ------   ------   ------   ------   ------   ------   ------
+  Native Heap    13571    13456        0        0    26496    21569     4926
+  Dalvik Heap    18772    18108        0        0    44765    28749    16016
+ Dalvik Other     2397     2396        0        0                           
+        Stack     1156     1156        0        0                           
+       Ashmem     4902       44        0        0                           
+      Gfx dev    15380    15380        0        0                           
+    Other dev        9        0        8        0                           
+     .so mmap    13487     3348     4268        0                           
+    .apk mmap      858        0       36        0                           
+    .ttf mmap        8        0        0        0                           
+    .dex mmap     7588        4     5752        0                           
+    .oat mmap     3189        0      952        0                           
+    .art mmap     2560     1404        0        0                           
+   Other mmap      449        8      416        0                           
+   EGL mtrack    83352    83352        0        0                           
+      Unknown    42392    42388        0        0                           
+        TOTAL   210070   181044    11432        0    71261    50318    20942
+ 
+ App Summary
+                       Pss(KB)
+                        ------
+           Java Heap:    19512
+         Native Heap:    13456
+                Code:    14360
+               Stack:     1156
+            Graphics:    98732
+       Private Other:    45260
+              System:    17594
+ 
+               TOTAL:   210070      TOTAL SWAP (KB):        0
+ 
+ Objects
+               Views:       65         ViewRootImpl:        1
+         AppContexts:        7           Activities:        1
+              Assets:        2        AssetManagers:        4
+       Local Binders:       37        Proxy Binders:       34
+       Parcel memory:       13         Parcel count:       53
+    Death Recipients:        4      OpenSSL Sockets:        1
+ 
+ SQL
+         MEMORY_USED:     1658
+  PAGECACHE_OVERFLOW:      384          MALLOC_SIZE:       62
+ 
+ DATABASES
+      pgsz     dbsz   Lookaside(b)          cache  Dbname
+         4       24             19         0/23/2  /data/user/0/org.mozilla.firefox/databases/site_permissions_database
+         1        2                         0/0/0    (attached) temp
+         4       24             45         5/21/4  /data/user/0/org.mozilla.firefox/databases/site_permissions_database (1)
+         4       32             19         0/28/2  /data/user/0/org.mozilla.firefox/databases/manifests
+         1        2                         0/0/0    (attached) temp
+         4       32             26         3/24/4  /data/user/0/org.mozilla.firefox/databases/manifests (1)
+         4       76            404     295/257/25  /data/user/0/org.mozilla.firefox/databases/androidx.work.workdb
+         1        4                         0/0/0    (attached) temp
+         4       76             35        12/26/5  /data/user/0/org.mozilla.firefox/databases/androidx.work.workdb (1)
+         4       16             27        24/25/5  /data/user/0/org.mozilla.firefox/databases/__leanplum.db
+         4       24             19         0/28/2  /data/user/0/org.mozilla.firefox/databases/top_sites
+         1        2                         0/0/0    (attached) temp
+         4       24             34         3/24/4  /data/user/0/org.mozilla.firefox/databases/top_sites (1)
+         4       24             37         3/43/5  /data/user/0/org.mozilla.firefox/databases/recently_closed_tabs
+         1        4                         0/0/0    (attached) temp
+         4       24             23         2/23/3  /data/user/0/org.mozilla.firefox/databases/recently_closed_tabs (1)
+         4       32             40         8/55/6  /data/user/0/org.mozilla.firefox/databases/tab_collections
+         1        5                         0/0/0    (attached) temp
+         4       32             23         2/24/3  /data/user/0/org.mozilla.firefox/databases/tab_collections (1)
+         4       24             22         1/37/3  /data/user/0/org.mozilla.firefox/databases/mozac_downloads_database
+         1        3                         0/0/0    (attached) temp
+         4       24             40         3/24/4  /data/user/0/org.mozilla.firefox/databases/mozac_downloads_database (1)
+1624834547
+******************************
+Applications Memory Usage (kB):
+Uptime: 121315 Realtime: 121303
+
+** MEMINFO in pid 2846 [org.mozilla.firefox] **
+                   Pss  Private  Private  Swapped     Heap     Heap     Heap
+                 Total    Dirty    Clean    Dirty     Size    Alloc     Free
+                ------   ------   ------   ------   ------   ------   ------
+  Native Heap    13582    13448        0        0    26496    21346     5149
+  Dalvik Heap    17988    17224        0        0    44777    28587    16190
+ Dalvik Other     2381     2380        0        0                           
+        Stack     1156     1156        0        0                           
+       Ashmem     4902       44        0        0                           
+      Gfx dev    15380    15380        0        0                           
+    Other dev       10        0        8        0                           
+     .so mmap    13674     3348     4336        0                           
+    .apk mmap      818        0       36        0                           
+    .ttf mmap        8        0        0        0                           
+    .dex mmap     7392        4     5556        0                           
+    .oat mmap     3316        0     1008        0                           
+    .art mmap     2843     1404       84        0                           
+   Other mmap      322        8      296        0                           
+   EGL mtrack    83352    83352        0        0                           
+      Unknown    42973    42968        0        0                           
+        TOTAL   210097   180716    11324        0    71273    49933    21339
+ 
+ App Summary
+                       Pss(KB)
+                        ------
+           Java Heap:    18712
+         Native Heap:    13448
+                Code:    14288
+               Stack:     1156
+            Graphics:    98732
+       Private Other:    45704
+              System:    18057
+ 
+               TOTAL:   210097      TOTAL SWAP (KB):        0
+ 
+ Objects
+               Views:       65         ViewRootImpl:        1
+         AppContexts:        7           Activities:        1
+              Assets:        2        AssetManagers:        4
+       Local Binders:       37        Proxy Binders:       34
+       Parcel memory:       13         Parcel count:       53
+    Death Recipients:        4      OpenSSL Sockets:        1
+ 
+ SQL
+         MEMORY_USED:     1658
+  PAGECACHE_OVERFLOW:      384          MALLOC_SIZE:       62
+ 
+ DATABASES
+      pgsz     dbsz   Lookaside(b)          cache  Dbname
+         4       24             19         0/28/2  /data/user/0/org.mozilla.firefox/databases/site_permissions_database
+         1        2                         0/0/0    (attached) temp
+         4       24             45         5/24/4  /data/user/0/org.mozilla.firefox/databases/site_permissions_database (1)
+         4       32             19         0/33/2  /data/user/0/org.mozilla.firefox/databases/manifests
+         1        2                         0/0/0    (attached) temp
+         4       32             26         3/27/4  /data/user/0/org.mozilla.firefox/databases/manifests (1)
+         4       76            404     295/262/25  /data/user/0/org.mozilla.firefox/databases/androidx.work.workdb
+         1        4                         0/0/0    (attached) temp
+         4       76             35        12/29/5  /data/user/0/org.mozilla.firefox/databases/androidx.work.workdb (1)
+         4       16             27        24/28/5  /data/user/0/org.mozilla.firefox/databases/__leanplum.db
+         4       24             19         0/33/2  /data/user/0/org.mozilla.firefox/databases/top_sites
+         1        2                         0/0/0    (attached) temp
+         4       24             34         3/27/4  /data/user/0/org.mozilla.firefox/databases/top_sites (1)
+         4       24             37         3/48/5  /data/user/0/org.mozilla.firefox/databases/recently_closed_tabs
+         1        4                         0/0/0    (attached) temp
+         4       24             23         2/26/3  /data/user/0/org.mozilla.firefox/databases/recently_closed_tabs (1)
+         4       32             40         8/60/6  /data/user/0/org.mozilla.firefox/databases/tab_collections
+         1        5                         0/0/0    (attached) temp
+         4       32             23         2/27/3  /data/user/0/org.mozilla.firefox/databases/tab_collections (1)
+         4       24             22         1/42/3  /data/user/0/org.mozilla.firefox/databases/mozac_downloads_database
+         1        3                         0/0/0    (attached) temp
+         4       24             40         3/27/4  /data/user/0/org.mozilla.firefox/databases/mozac_downloads_database (1)
+1624834553
+******************************
+Applications Memory Usage (kB):
+Uptime: 126517 Realtime: 126505
+
+** MEMINFO in pid 2846 [org.mozilla.firefox] **
+                   Pss  Private  Private  Swapped     Heap     Heap     Heap
+                 Total    Dirty    Clean    Dirty     Size    Alloc     Free
+                ------   ------   ------   ------   ------   ------   ------
+  Native Heap    13594    13444        0        0    26496    21328     5167
+  Dalvik Heap    18262    17224        0        0    44776    28586    16190
+ Dalvik Other     2377     2376        0        0                           
+        Stack     1180     1180        0        0                           
+       Ashmem     4902       44        0        0                           
+      Gfx dev    15380    15380        0        0                           
+    Other dev       10        0        8        0                           
+     .so mmap    12853     3348     3612        0                           
+    .apk mmap      148        0       24        0                           
+    .ttf mmap        4        0        0        0                           
+    .dex mmap     6269        4     4444        0                           
+    .oat mmap     2565        0      520        0                           
+    .art mmap     2833     1404       68        0                           
+   Other mmap      166        8      140        0                           
+   EGL mtrack    83352    83352        0        0                           
+      Unknown    42982    42976        0        0                           
+        TOTAL   206877   180740     8816        0    71272    49914    21357
+ 
+ App Summary
+                       Pss(KB)
+                        ------
+           Java Heap:    18696
+         Native Heap:    13444
+                Code:    11952
+               Stack:     1180
+            Graphics:    98732
+       Private Other:    45552
+              System:    17321
+ 
+               TOTAL:   206877      TOTAL SWAP (KB):        0
+ 
+ Objects
+               Views:       65         ViewRootImpl:        1
+         AppContexts:        7           Activities:        1
+              Assets:        2        AssetManagers:        4
+       Local Binders:       37        Proxy Binders:       34
+       Parcel memory:       13         Parcel count:       53
+    Death Recipients:        4      OpenSSL Sockets:        1
+ 
+ SQL
+         MEMORY_USED:     1658
+  PAGECACHE_OVERFLOW:      384          MALLOC_SIZE:       62
+ 
+ DATABASES
+      pgsz     dbsz   Lookaside(b)          cache  Dbname
+         4       24             19         0/33/2  /data/user/0/org.mozilla.firefox/databases/site_permissions_database
+         1        2                         0/0/0    (attached) temp
+         4       24             45         5/27/4  /data/user/0/org.mozilla.firefox/databases/site_permissions_database (1)
+         4       32             19         0/38/2  /data/user/0/org.mozilla.firefox/databases/manifests
+         1        2                         0/0/0    (attached) temp
+         4       32             26         3/30/4  /data/user/0/org.mozilla.firefox/databases/manifests (1)
+         4       76            404     295/267/25  /data/user/0/org.mozilla.firefox/databases/androidx.work.workdb
+         1        4                         0/0/0    (attached) temp
+         4       76             35        12/32/5  /data/user/0/org.mozilla.firefox/databases/androidx.work.workdb (1)
+         4       16             27        24/31/5  /data/user/0/org.mozilla.firefox/databases/__leanplum.db
+         4       24             19         0/38/2  /data/user/0/org.mozilla.firefox/databases/top_sites
+         1        2                         0/0/0    (attached) temp
+         4       24             34         3/30/4  /data/user/0/org.mozilla.firefox/databases/top_sites (1)
+         4       24             37         3/53/5  /data/user/0/org.mozilla.firefox/databases/recently_closed_tabs
+         1        4                         0/0/0    (attached) temp
+         4       24             23         2/29/3  /data/user/0/org.mozilla.firefox/databases/recently_closed_tabs (1)
+         4       32             40         8/65/6  /data/user/0/org.mozilla.firefox/databases/tab_collections
+         1        5                         0/0/0    (attached) temp
+         4       32             23         2/30/3  /data/user/0/org.mozilla.firefox/databases/tab_collections (1)
+         4       24             22         1/47/3  /data/user/0/org.mozilla.firefox/databases/mozac_downloads_database
+         1        3                         0/0/0    (attached) temp
+         4       24             40         3/30/4  /data/user/0/org.mozilla.firefox/databases/mozac_downloads_database (1)
+1624834558
+******************************
+Applications Memory Usage (kB):
+Uptime: 131868 Realtime: 131856
+
+** MEMINFO in pid 2846 [org.mozilla.firefox] **
+                   Pss  Private  Private  Swapped     Heap     Heap     Heap
+                 Total    Dirty    Clean    Dirty     Size    Alloc     Free
+                ------   ------   ------   ------   ------   ------   ------
+  Native Heap    13517    13392        0        0    26496    21016     5479
+  Dalvik Heap    17968    17224        0        0    44774    28597    16177
+ Dalvik Other     2377     2376        0        0                           
+        Stack     1156     1156        0        0                           
+       Ashmem     4902       44        0        0                           
+      Gfx dev    15380    15380        0        0                           
+    Other dev       10        0        8        0                           
+     .so mmap    10135     3348     1792        0                           
+    .apk mmap        2        0        0        0                           
+    .dex mmap      548        4      420        0                           
+    .oat mmap     1199        0       56        0                           
+    .art mmap     2308     1404        8        0                           
+   Other mmap       70        8       52        0                           
+   EGL mtrack    83352    83352        0        0                           
+      Unknown    42965    42960        0        0                           
+        TOTAL   195889   180648     2336        0    71270    49613    21656
+ 
+ App Summary
+                       Pss(KB)
+                        ------
+           Java Heap:    18636
+         Native Heap:    13392
+                Code:     5620
+               Stack:     1156
+            Graphics:    98732
+       Private Other:    45448
+              System:    12905
+ 
+               TOTAL:   195889      TOTAL SWAP (KB):        0
+ 
+ Objects
+               Views:       65         ViewRootImpl:        1
+         AppContexts:        5           Activities:        1
+              Assets:        2        AssetManagers:        4
+       Local Binders:       32        Proxy Binders:       32
+       Parcel memory:       13         Parcel count:       55
+    Death Recipients:        4      OpenSSL Sockets:        1
+ 
+ SQL
+         MEMORY_USED:     1658
+  PAGECACHE_OVERFLOW:      384          MALLOC_SIZE:       62
+ 
+ DATABASES
+      pgsz     dbsz   Lookaside(b)          cache  Dbname
+         4       24             19         0/38/2  /data/user/0/org.mozilla.firefox/databases/site_permissions_database
+         1        2                         0/0/0    (attached) temp
+         4       24             45         5/30/4  /data/user/0/org.mozilla.firefox/databases/site_permissions_database (1)
+         4       32             19         0/43/2  /data/user/0/org.mozilla.firefox/databases/manifests
+         1        2                         0/0/0    (attached) temp
+         4       32             26         3/33/4  /data/user/0/org.mozilla.firefox/databases/manifests (1)
+         4       76            404     295/272/25  /data/user/0/org.mozilla.firefox/databases/androidx.work.workdb
+         1        4                         0/0/0    (attached) temp
+         4       76             35        12/35/5  /data/user/0/org.mozilla.firefox/databases/androidx.work.workdb (1)
+         4       16             27        24/34/5  /data/user/0/org.mozilla.firefox/databases/__leanplum.db
+         4       24             19         0/43/2  /data/user/0/org.mozilla.firefox/databases/top_sites
+         1        2                         0/0/0    (attached) temp
+         4       24             34         3/33/4  /data/user/0/org.mozilla.firefox/databases/top_sites (1)
+         4       24             37         3/58/5  /data/user/0/org.mozilla.firefox/databases/recently_closed_tabs
+         1        4                         0/0/0    (attached) temp
+         4       24             23         2/32/3  /data/user/0/org.mozilla.firefox/databases/recently_closed_tabs (1)
+         4       32             40         8/70/6  /data/user/0/org.mozilla.firefox/databases/tab_collections
+         1        5                         0/0/0    (attached) temp
+         4       32             23         2/33/3  /data/user/0/org.mozilla.firefox/databases/tab_collections (1)
+         4       24             22         1/52/3  /data/user/0/org.mozilla.firefox/databases/mozac_downloads_database
+         1        3                         0/0/0    (attached) temp
+         4       24             40         3/33/4  /data/user/0/org.mozilla.firefox/databases/mozac_downloads_database (1)
+1624834563
+******************************
+Applications Memory Usage (kB):
+Uptime: 137228 Realtime: 137217
+
+** MEMINFO in pid 2846 [org.mozilla.firefox] **
+                   Pss  Private  Private  Swapped     Heap     Heap     Heap
+                 Total    Dirty    Clean    Dirty     Size    Alloc     Free
+                ------   ------   ------   ------   ------   ------   ------
+  Native Heap    13485    13360        0        0    26496    20501     5994
+  Dalvik Heap    17980    17236        0        0    44771    28673    16098
+ Dalvik Other     2377     2376        0        0                           
+        Stack     1160     1160        0        0                           
+       Ashmem     4902       44        0        0                           
+      Gfx dev    15380    15380        0        0                           
+    Other dev       10        0        8        0                           
+     .so mmap     8375     3348     1144        0                           
+    .dex mmap      222        4      148        0                           
+    .oat mmap      852        0       36        0                           
+    .art mmap     2115     1404        0        0                           
+   Other mmap       16        8        0        0                           
+   EGL mtrack    83352    83352        0        0                           
+      Unknown    43009    43004        0        0                           
+        TOTAL   193235   180676     1336        0    71267    49174    22092
+ 
+ App Summary
+                       Pss(KB)
+                        ------
+           Java Heap:    18640
+         Native Heap:    13360
+                Code:     4680
+               Stack:     1160
+            Graphics:    98732
+       Private Other:    45440
+              System:    11223
+ 
+               TOTAL:   193235      TOTAL SWAP (KB):        0
+ 
+ Objects
+               Views:       65         ViewRootImpl:        1
+         AppContexts:        5           Activities:        1
+              Assets:        2        AssetManagers:        4
+       Local Binders:       32        Proxy Binders:       32
+       Parcel memory:       13         Parcel count:       53
+    Death Recipients:        4      OpenSSL Sockets:        1
+ 
+ SQL
+         MEMORY_USED:     1658
+  PAGECACHE_OVERFLOW:      384          MALLOC_SIZE:       62
+ 
+ DATABASES
+      pgsz     dbsz   Lookaside(b)          cache  Dbname
+         4       24             19         0/43/2  /data/user/0/org.mozilla.firefox/databases/site_permissions_database
+         1        2                         0/0/0    (attached) temp
+         4       24             45         5/33/4  /data/user/0/org.mozilla.firefox/databases/site_permissions_database (1)
+         4       32             19         0/48/2  /data/user/0/org.mozilla.firefox/databases/manifests
+         1        2                         0/0/0    (attached) temp
+         4       32             26         3/36/4  /data/user/0/org.mozilla.firefox/databases/manifests (1)
+         4       76            404     295/277/25  /data/user/0/org.mozilla.firefox/databases/androidx.work.workdb
+         1        4                         0/0/0    (attached) temp
+         4       76             35        12/38/5  /data/user/0/org.mozilla.firefox/databases/androidx.work.workdb (1)
+         4       16             27        24/37/5  /data/user/0/org.mozilla.firefox/databases/__leanplum.db
+         4       24             19         0/48/2  /data/user/0/org.mozilla.firefox/databases/top_sites
+         1        2                         0/0/0    (attached) temp
+         4       24             34         3/36/4  /data/user/0/org.mozilla.firefox/databases/top_sites (1)
+         4       24             37         3/63/5  /data/user/0/org.mozilla.firefox/databases/recently_closed_tabs
+         1        4                         0/0/0    (attached) temp
+         4       24             23         2/35/3  /data/user/0/org.mozilla.firefox/databases/recently_closed_tabs (1)
+         4       32             40         8/75/6  /data/user/0/org.mozilla.firefox/databases/tab_collections
+         1        5                         0/0/0    (attached) temp
+         4       32             23         2/36/3  /data/user/0/org.mozilla.firefox/databases/tab_collections (1)
+         4       24             22         1/57/3  /data/user/0/org.mozilla.firefox/databases/mozac_downloads_database
+         1        3                         0/0/0    (attached) temp
+         4       24             40         3/36/4  /data/user/0/org.mozilla.firefox/databases/mozac_downloads_database (1)
+1624834569
+******************************
+Applications Memory Usage (kB):
+Uptime: 143325 Realtime: 143313
+
+** MEMINFO in pid 2846 [org.mozilla.firefox] **
+                   Pss  Private  Private  Swapped     Heap     Heap     Heap
+                 Total    Dirty    Clean    Dirty     Size    Alloc     Free
+                ------   ------   ------   ------   ------   ------   ------
+  Native Heap    13494    13360        0        0    26496    20451     6044
+  Dalvik Heap    17988    17224        0        0    44768    28575    16193
+ Dalvik Other     2373     2372        0        0                           
+        Stack     1184     1184        0        0                           
+       Ashmem     4902       44        0        0                           
+      Gfx dev    15380    15380        0        0                           
+    Other dev       10        0        8        0                           
+     .so mmap     8147     3348     1112        0                           
+    .dex mmap      444        4      384        0                           
+    .oat mmap      864        0        8        0                           
+    .art mmap     2183     1404        0        0                           
+   Other mmap       61        8       44        0                           
+   EGL mtrack    83352    83352        0        0                           
+      Unknown    43040    43036        0        0                           
+        TOTAL   193422   180716     1556        0    71264    49026    22237
+ 
+ App Summary
+                       Pss(KB)
+                        ------
+           Java Heap:    18628
+         Native Heap:    13360
+                Code:     4856
+               Stack:     1184
+            Graphics:    98732
+       Private Other:    45512
+              System:    11150
+ 
+               TOTAL:   193422      TOTAL SWAP (KB):        0
+ 
+ Objects
+               Views:       65         ViewRootImpl:        1
+         AppContexts:        5           Activities:        1
+              Assets:        2        AssetManagers:        4
+       Local Binders:       32        Proxy Binders:       32
+       Parcel memory:       13         Parcel count:       53
+    Death Recipients:        4      OpenSSL Sockets:        1
+ 
+ SQL
+         MEMORY_USED:     1658
+  PAGECACHE_OVERFLOW:      384          MALLOC_SIZE:       62
+ 
+ DATABASES
+      pgsz     dbsz   Lookaside(b)          cache  Dbname
+         4       24             19         0/48/2  /data/user/0/org.mozilla.firefox/databases/site_permissions_database
+         1        2                         0/0/0    (attached) temp
+         4       24             45         5/36/4  /data/user/0/org.mozilla.firefox/databases/site_permissions_database (1)
+         4       32             19         0/53/2  /data/user/0/org.mozilla.firefox/databases/manifests
+         1        2                         0/0/0    (attached) temp
+         4       32             26         3/39/4  /data/user/0/org.mozilla.firefox/databases/manifests (1)
+         4       76            404     295/282/25  /data/user/0/org.mozilla.firefox/databases/androidx.work.workdb
+         1        4                         0/0/0    (attached) temp
+         4       76             35        12/41/5  /data/user/0/org.mozilla.firefox/databases/androidx.work.workdb (1)
+         4       16             27        24/40/5  /data/user/0/org.mozilla.firefox/databases/__leanplum.db
+         4       24             19         0/53/2  /data/user/0/org.mozilla.firefox/databases/top_sites
+         1        2                         0/0/0    (attached) temp
+         4       24             34         3/39/4  /data/user/0/org.mozilla.firefox/databases/top_sites (1)
+         4       24             37         3/68/5  /data/user/0/org.mozilla.firefox/databases/recently_closed_tabs
+         1        4                         0/0/0    (attached) temp
+         4       24             23         2/38/3  /data/user/0/org.mozilla.firefox/databases/recently_closed_tabs (1)
+         4       32             40         8/80/6  /data/user/0/org.mozilla.firefox/databases/tab_collections
+         1        5                         0/0/0    (attached) temp
+         4       32             23         2/39/3  /data/user/0/org.mozilla.firefox/databases/tab_collections (1)
+         4       24             22         1/62/3  /data/user/0/org.mozilla.firefox/databases/mozac_downloads_database
+         1        3                         0/0/0    (attached) temp
+         4       24             40         3/39/4  /data/user/0/org.mozilla.firefox/databases/mozac_downloads_database (1)
+1624834575
+******************************
+Applications Memory Usage (kB):
+Uptime: 149784 Realtime: 149772
+
+** MEMINFO in pid 2846 [org.mozilla.firefox] **
+                   Pss  Private  Private  Swapped     Heap     Heap     Heap
+                 Total    Dirty    Clean    Dirty     Size    Alloc     Free
+                ------   ------   ------   ------   ------   ------   ------
+  Native Heap    13471    13356        0        0    26496    20337     6158
+  Dalvik Heap    17888    17224        0        0    44767    28579    16188
+ Dalvik Other     2377     2376        0        0                           
+        Stack     1152     1152        0        0                           
+       Ashmem     4902       44        0        0                           
+      Gfx dev    15380    15380        0        0                           
+    Other dev       10        0        8        0                           
+     .so mmap     9191     3348     2048        0                           
+    .dex mmap      412        4      352        0                           
+    .oat mmap      659        0       24        0                           
+    .art mmap     2006     1404        0        0                           
+   Other mmap       86        8       76        0                           
+   EGL mtrack    83352    83352        0        0                           
+      Unknown    35460    35456        0        0                           
+        TOTAL   186346   173104     2508        0    71263    48916    22346
+ 
+ App Summary
+                       Pss(KB)
+                        ------
+           Java Heap:    18628
+         Native Heap:    13356
+                Code:     5776
+               Stack:     1152
+            Graphics:    98732
+       Private Other:    37968
+              System:    10734
+ 
+               TOTAL:   186346      TOTAL SWAP (KB):        0
+ 
+ Objects
+               Views:       65         ViewRootImpl:        1
+         AppContexts:        5           Activities:        1
+              Assets:        2        AssetManagers:        4
+       Local Binders:       32        Proxy Binders:       32
+       Parcel memory:       13         Parcel count:       53
+    Death Recipients:        4      OpenSSL Sockets:        1
+ 
+ SQL
+         MEMORY_USED:     1658
+  PAGECACHE_OVERFLOW:      384          MALLOC_SIZE:       62
+ 
+ DATABASES
+      pgsz     dbsz   Lookaside(b)          cache  Dbname
+         4       24             19         0/53/2  /data/user/0/org.mozilla.firefox/databases/site_permissions_database
+         1        2                         0/0/0    (attached) temp
+         4       24             45         5/39/4  /data/user/0/org.mozilla.firefox/databases/site_permissions_database (1)
+         4       32             19         0/58/2  /data/user/0/org.mozilla.firefox/databases/manifests
+         1        2                         0/0/0    (attached) temp
+         4       32             26         3/42/4  /data/user/0/org.mozilla.firefox/databases/manifests (1)
+         4       76            404     295/287/25  /data/user/0/org.mozilla.firefox/databases/androidx.work.workdb
+         1        4                         0/0/0    (attached) temp
+         4       76             35        12/44/5  /data/user/0/org.mozilla.firefox/databases/androidx.work.workdb (1)
+         4       16             27        24/43/5  /data/user/0/org.mozilla.firefox/databases/__leanplum.db
+         4       24             19         0/58/2  /data/user/0/org.mozilla.firefox/databases/top_sites
+         1        2                         0/0/0    (attached) temp
+         4       24             34         3/42/4  /data/user/0/org.mozilla.firefox/databases/top_sites (1)
+         4       24             37         3/73/5  /data/user/0/org.mozilla.firefox/databases/recently_closed_tabs
+         1        4                         0/0/0    (attached) temp
+         4       24             23         2/41/3  /data/user/0/org.mozilla.firefox/databases/recently_closed_tabs (1)
+         4       32             40         8/85/6  /data/user/0/org.mozilla.firefox/databases/tab_collections
+         1        5                         0/0/0    (attached) temp
+         4       32             23         2/42/3  /data/user/0/org.mozilla.firefox/databases/tab_collections (1)
+         4       24             22         1/67/3  /data/user/0/org.mozilla.firefox/databases/mozac_downloads_database
+         1        3                         0/0/0    (attached) temp
+         4       24             40         3/42/4  /data/user/0/org.mozilla.firefox/databases/mozac_downloads_database (1)
+1624834582
+******************************
+Applications Memory Usage (kB):
+Uptime: 156246 Realtime: 156234
+
+** MEMINFO in pid 2846 [org.mozilla.firefox] **
+                   Pss  Private  Private  Swapped     Heap     Heap     Heap
+                 Total    Dirty    Clean    Dirty     Size    Alloc     Free
+                ------   ------   ------   ------   ------   ------   ------
+  Native Heap    13490    13356        0        0    26496    20208     6287
+  Dalvik Heap    17988    17224        0        0    44767    28584    16183
+ Dalvik Other     2373     2372        0        0                           
+        Stack     1152     1152        0        0                           
+       Ashmem     4902       44        0        0                           
+      Gfx dev    15380    15380        0        0                           
+    Other dev       10        0        8        0                           
+     .so mmap     8488     3348     1480        0                           
+    .dex mmap      442        4      376        0                           
+    .oat mmap      857        0       64        0                           
+    .art mmap     2172     1404        0        0                           
+   Other mmap       87        8       76        0                           
+   EGL mtrack    83352    83352        0        0                           
+      Unknown    35541    35536        0        0                           
+        TOTAL   186234   173180     2004        0    71263    48792    22470
+ 
+ App Summary
+                       Pss(KB)
+                        ------
+           Java Heap:    18628
+         Native Heap:    13356
+                Code:     5272
+               Stack:     1152
+            Graphics:    98732
+       Private Other:    38044
+              System:    11050
+ 
+               TOTAL:   186234      TOTAL SWAP (KB):        0
+ 
+ Objects
+               Views:       65         ViewRootImpl:        1
+         AppContexts:        5           Activities:        1
+              Assets:        2        AssetManagers:        4
+       Local Binders:       32        Proxy Binders:       32
+       Parcel memory:       13         Parcel count:       53
+    Death Recipients:        4      OpenSSL Sockets:        1
+ 
+ SQL
+         MEMORY_USED:     1658
+  PAGECACHE_OVERFLOW:      384          MALLOC_SIZE:       62
+ 
+ DATABASES
+      pgsz     dbsz   Lookaside(b)          cache  Dbname
+         4       24             19         0/58/2  /data/user/0/org.mozilla.firefox/databases/site_permissions_database
+         1        2                         0/0/0    (attached) temp
+         4       24             45         5/42/4  /data/user/0/org.mozilla.firefox/databases/site_permissions_database (1)
+         4       32             19         0/63/2  /data/user/0/org.mozilla.firefox/databases/manifests
+         1        2                         0/0/0    (attached) temp
+         4       32             26         3/45/4  /data/user/0/org.mozilla.firefox/databases/manifests (1)
+         4       76            404     295/292/25  /data/user/0/org.mozilla.firefox/databases/androidx.work.workdb
+         1        4                         0/0/0    (attached) temp
+         4       76             35        12/47/5  /data/user/0/org.mozilla.firefox/databases/androidx.work.workdb (1)
+         4       16             27        24/46/5  /data/user/0/org.mozilla.firefox/databases/__leanplum.db
+         4       24             19         0/63/2  /data/user/0/org.mozilla.firefox/databases/top_sites
+         1        2                         0/0/0    (attached) temp
+         4       24             34         3/45/4  /data/user/0/org.mozilla.firefox/databases/top_sites (1)
+         4       24             37         3/78/5  /data/user/0/org.mozilla.firefox/databases/recently_closed_tabs
+         1        4                         0/0/0    (attached) temp
+         4       24             23         2/44/3  /data/user/0/org.mozilla.firefox/databases/recently_closed_tabs (1)
+         4       32             40         8/90/6  /data/user/0/org.mozilla.firefox/databases/tab_collections
+         1        5                         0/0/0    (attached) temp
+         4       32             23         2/45/3  /data/user/0/org.mozilla.firefox/databases/tab_collections (1)
+         4       24             22         1/72/3  /data/user/0/org.mozilla.firefox/databases/mozac_downloads_database
+         1        3                         0/0/0    (attached) temp
+         4       24             40         3/45/4  /data/user/0/org.mozilla.firefox/databases/mozac_downloads_database (1)
+1624834588
+******************************
+Applications Memory Usage (kB):
+Uptime: 161868 Realtime: 161856
+
+** MEMINFO in pid 2846 [org.mozilla.firefox] **
+                   Pss  Private  Private  Swapped     Heap     Heap     Heap
+                 Total    Dirty    Clean    Dirty     Size    Alloc     Free
+                ------   ------   ------   ------   ------   ------   ------
+  Native Heap    13823    13716        0        0    26496    20542     5953
+  Dalvik Heap    17864    17224        0        0    44767    28916    15851
+ Dalvik Other     2409     2408        0        0                           
+        Stack     1148     1148        0        0                           
+       Ashmem      330      188        0        0                           
+      Gfx dev     3216     3216        0        0                           
+    Other dev       10        0        8        0                           
+     .so mmap    14060     3348     5748        0                           
+    .apk mmap      302        0       24        0                           
+    .dex mmap     3006        4     2072        0                           
+    .oat mmap     1450        0      760        0                           
+    .art mmap     2577     1404      512        0                           
+   Other mmap       62        8       52        0                           
+   EGL mtrack    56016    56016        0        0                           
+      Unknown    36104    36100        0        0                           
+        TOTAL   152377   134780     9176        0    71263    49458    21804
+ 
+ App Summary
+                       Pss(KB)
+                        ------
+           Java Heap:    19140
+         Native Heap:    13716
+                Code:    11956
+               Stack:     1148
+            Graphics:    59232
+       Private Other:    38764
+              System:     8421
+ 
+               TOTAL:   152377      TOTAL SWAP (KB):        0
+ 
+ Objects
+               Views:       65         ViewRootImpl:        1
+         AppContexts:        4           Activities:        1
+              Assets:        2        AssetManagers:        4
+       Local Binders:       31        Proxy Binders:       31
+       Parcel memory:       13         Parcel count:       53
+    Death Recipients:        4      OpenSSL Sockets:        1
+ 
+ SQL
+         MEMORY_USED:     1658
+  PAGECACHE_OVERFLOW:      384          MALLOC_SIZE:       62
+ 
+ DATABASES
+      pgsz     dbsz   Lookaside(b)          cache  Dbname
+         4       24             19         0/63/2  /data/user/0/org.mozilla.firefox/databases/site_permissions_database
+         1        2                         0/0/0    (attached) temp
+         4       24             45         5/45/4  /data/user/0/org.mozilla.firefox/databases/site_permissions_database (1)
+         4       32             19         0/68/2  /data/user/0/org.mozilla.firefox/databases/manifests
+         1        2                         0/0/0    (attached) temp
+         4       32             26         3/48/4  /data/user/0/org.mozilla.firefox/databases/manifests (1)
+         4       76            404     295/297/25  /data/user/0/org.mozilla.firefox/databases/androidx.work.workdb
+         1        4                         0/0/0    (attached) temp
+         4       76             35        12/50/5  /data/user/0/org.mozilla.firefox/databases/androidx.work.workdb (1)
+         4       16             27        24/49/5  /data/user/0/org.mozilla.firefox/databases/__leanplum.db
+         4       24             19         0/68/2  /data/user/0/org.mozilla.firefox/databases/top_sites
+         1        2                         0/0/0    (attached) temp
+         4       24             34         3/48/4  /data/user/0/org.mozilla.firefox/databases/top_sites (1)
+         4       24             37         3/83/5  /data/user/0/org.mozilla.firefox/databases/recently_closed_tabs
+         1        4                         0/0/0    (attached) temp
+         4       24             23         2/47/3  /data/user/0/org.mozilla.firefox/databases/recently_closed_tabs (1)
+         4       32             40         8/95/6  /data/user/0/org.mozilla.firefox/databases/tab_collections
+         1        5                         0/0/0    (attached) temp
+         4       32             23         2/48/3  /data/user/0/org.mozilla.firefox/databases/tab_collections (1)
+         4       24             22         1/77/3  /data/user/0/org.mozilla.firefox/databases/mozac_downloads_database
+         1        3                         0/0/0    (attached) temp
+         4       24             40         3/48/4  /data/user/0/org.mozilla.firefox/databases/mozac_downloads_database (1)
+1624834593
+******************************

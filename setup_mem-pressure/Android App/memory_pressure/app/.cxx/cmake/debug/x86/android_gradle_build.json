@@ -1,0 +1,44 @@
+{
+  "stringTable": {
+    "0": "/home/motamid/Desktop/memory_pressure/app/.cxx/cmake/debug/x86",
+    "1": "--target=i686-none-linux-android16 --gcc-toolchain=/home/motamid/Android/Sdk/ndk/22.1.7171670/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/motamid/Android/Sdk/ndk/22.1.7171670/toolchains/llvm/prebuilt/linux-x86_64/sysroot -Dnative_lib_EXPORTS -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -std=c++11 -O0 -fno-limit-debug-info -fPIC"
+  },
+  "buildFiles": [
+    "/home/motamid/Android/Sdk/ndk/22.1.7171670/build/cmake/android.toolchain.cmake",
+    "/home/motamid/Android/Sdk/ndk/22.1.7171670/build/cmake/platforms.cmake",
+    "/home/motamid/Desktop/memory_pressure/app/src/main/cpp/CMakeLists.txt",
+    "/home/motamid/Android/Sdk/ndk/22.1.7171670/build/cmake/compiler_id.cmake"
+  ],
+  "cleanCommands": [
+    "/home/motamid/Android/Sdk/cmake/3.10.2.4988404/bin/ninja -C \"/home/motamid/Desktop/memory_pressure/app/.cxx/cmake/debug/x86\" clean"
+  ],
+  "buildTargetsCommand": "/home/motamid/Android/Sdk/cmake/3.10.2.4988404/bin/ninja  -C \"/home/motamid/Desktop/memory_pressure/app/.cxx/cmake/debug/x86\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "native-lib-Debug-x86": {
+      "buildCommand": "/home/motamid/Android/Sdk/cmake/3.10.2.4988404/bin/ninja -C \"/home/motamid/Desktop/memory_pressure/app/.cxx/cmake/debug/x86\" native-lib",
+      "buildType": "debug",
+      "toolchain": "761653566",
+      "abi": "x86",
+      "artifactName": "native-lib",
+      "files": [
+        {
+          "src": "/home/motamid/Desktop/memory_pressure/app/src/main/cpp/native-lib.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        }
+      ],
+      "headers": [],
+      "output": "/home/motamid/Desktop/memory_pressure/app/build/intermediates/cmake/debug/obj/x86/libnative-lib.so",
+      "runtimeFiles": []
+    }
+  },
+  "toolchains": {
+    "761653566": {
+      "cppCompilerExecutable": "/home/motamid/Android/Sdk/ndk/22.1.7171670/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++"
+    }
+  },
+  "cFileExtensions": [],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}

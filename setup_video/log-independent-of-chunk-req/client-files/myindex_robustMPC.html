@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Dash.js Rocks haha</title>
+    </head>
+    <body>
+        <div>
+            <video id="videoPlayer" width="100%" height="100%" controls="true"></video>
+        </div>
+	<script src="dash.all.min.js"></script>
+        <script>
+            localStorage.clear();
+            logCount = 0;
+            (function(){
+                var url = "/Manifest.mpd";
+                var player = dashjs.MediaPlayer().create()
+
+                var abr_algorithms = {0: 'Default', 1: 'Fixed Rate (0)', 2: 'Buffer Based', 3: 'Rate Based', 4: 'MPC', 5: 'Festive', 6: 'Bola'};
+                var abr_id = 4;
+
+                if ( abr_id > 1 && abr_id != 6 ) {
+                    player.enablerlABR(true);
+                }
+
+                // uncomment this block if you want to change the buffer size that dash tries to maintain
+                player.setBufferTimeAtTopQuality(60);
+                player.setStableBufferTime(60);
+                player.setBufferToKeep(60);
+                player.setBufferPruningInterval(60);
+
+                player.initialize(document.querySelector("#videoPlayer"), url, true);
+
+                if ( abr_id == 6 ) { //BOLA
+                    player.enableBufferOccupancyABR(true);
+                }
+                player.setAbrAlgorithm(abr_id);
+
+                if ( abr_id in abr_algorithms ) {
+                    document.title = abr_algorithms[abr_id];
+                } else {
+                    document.title = "Unknown ABR Algorithm";
+                }
+            })();
+            // CHANGE REST
+            setInterval(function(){ 
+                const videoElem = document.getElementById("videoPlayer");
+                const quality = videoElem.getVideoPlaybackQuality();
+                const droppedFrames = quality.droppedVideoFrames;
+                const totalFrames = quality.totalVideoFrames;
+                const timeElapsed = quality.creationTime/1000.0;
+
+                const lastPlaybackLog = (localStorage.playbackLog) ? ((JSON.parse(localStorage.playbackLog))[JSON.parse(localStorage.playbackLog).length - 1]) : ({
+                    timeElapsed: 0,
+                    totalFrames: 0,
+                    droppedFrames: 0
+                });
+
+                const currPlaybackLog = {
+                    logCount: logCount++,
+                    timeStamp: Date.now(),
+                    timeElapsed,
+                    totalFrames,
+                    droppedFrames,
+                    frameRate: ((totalFrames - lastPlaybackLog.totalFrames) - (droppedFrames - lastPlaybackLog.droppedFrames))/(timeElapsed - lastPlaybackLog.timeElapsed)
+                }
+
+                localStorage.setItem("playbackLog", JSON.stringify(localStorage.playbackLog ? [...JSON.parse(localStorage.playbackLog), currPlaybackLog] : [currPlaybackLog]));
+
+            }, 500); 
+        </script>
+    </body>
+</html>
