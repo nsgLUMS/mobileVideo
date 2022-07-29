@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,24 +9,67 @@
     tools:showIn="@layout/activity_main">
 
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="42dp"
-        android:layout_marginEnd="20dp"
-        android:text="Hi! Please note that we are collecting following information from your device:\n\nFollowing set of information is collected every second:\n
-    1. Amount of Memory Available \n
-    2. Number of Services Running \n\nSimilarly, following information is collected only once:\n
-    1. Brand\n
-    2. Model\n
-    3. Manufacturer\n
-    4. Hardware\n
-    5. Total Memory\n
-    6. Memory Thresholds\n
-    7. isLowRAMDevice\n"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/horizontal_padding">
+
+        <TextView android:id="@+id/mainActTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="70sp"
+            android:paddingBottom="50sp"
+            android:text="Running in the background!"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/mainActThankYouTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10sp"
+            android:text="Thank you!"
+            android:textAlignment="viewStart"
+            android:textColor="@color/colorAccent"
+            android:textSize="20sp" />
+
+        <TextView android:id="@+id/mainActThankYouNote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="30sp"
+            android:textAlignment="viewStart"
+            android:textSize="16sp"
+            android:text="@string/thank_you_note"/>
+
+        <TextView android:id="@+id/instructionThankYouNote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10sp"
+            android:textAlignment="viewStart"
+            android:textSize="16sp"
+            android:text="@string/instruction_thank_you_note"/>
+
+        <TextView android:id="@+id/instruction2ThankYouNote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="30sp"
+            android:textAlignment="viewStart"
+            android:textSize="16sp"
+            android:text="@string/instruction2_note"/>
+
+        <TextView android:id="@+id/mainActLearnMore"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="0sp"
+            android:textAlignment="viewStart"
+            android:textSize="16sp"
+            android:layout_marginBottom="@dimen/title_padding_top"
+            android:text="@string/learn_more_note"
+            android:autoLink="web" />
+
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

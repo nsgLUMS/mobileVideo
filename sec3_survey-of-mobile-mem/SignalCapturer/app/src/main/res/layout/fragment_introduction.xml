@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".IntroductionFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="40sp">
+
+        <TextView
+            android:id="@+id/introTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/title_padding_top"
+            android:paddingBottom="@dimen/title_padding_bottom"
+            android:text="SignalCapturer"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/introAboutTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10sp"
+            android:text="Hi!"
+            android:textAlignment="viewStart"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/introAbout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="20sp"
+            android:textAlignment="viewStart"
+            android:textSize="14sp"
+            android:text="@string/intro_about"/>
+
+        <TextView
+            android:id="@+id/seePrivacyTVButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10sp"
+            android:textAlignment="viewStart"
+            android:textSize="14sp"
+            android:onClick="seePrivacyPolicyOnClick"
+            android:text="@string/see_privacy_policy"
+            android:textColor="#67AEDD" />
+
+        <TextView
+            android:id="@+id/introAbout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10sp"
+            android:textAlignment="viewStart"
+            android:textSize="14sp"
+            android:visibility="gone"
+            android:text="@string/intro_about2"/>
+
+        <TextView
+            android:id="@+id/introAbout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10sp"
+            android:textAlignment="viewStart"
+            android:textSize="14sp"
+            android:visibility="gone"
+            android:text="@string/intro_about3"/>
+
+        <TextView
+            android:id="@+id/otherFAQs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10sp"
+            android:textAlignment="viewStart"
+            android:textSize="14sp"
+            android:text="@string/otherFAQs"
+            android:autoLink="web" />
+
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

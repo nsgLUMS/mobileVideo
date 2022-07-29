@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ConsentFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/horizontal_padding">
+
+        <TextView android:id="@+id/consentTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/title_padding_top"
+            android:paddingBottom="@dimen/title_padding_bottom"
+            android:text="What is collected?"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="30sp" />
+
+        <TextView android:id="@+id/consentAbout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="0sp"
+            android:textAlignment="viewStart"
+            android:textSize="14sp"
+            android:text="@string/what_we_log"/>
+
+        <TextView
+            android:id="@+id/consentShowDetailsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="showDetailMemoryStats"
+            android:text="@string/show_details"
+            android:textColor="#67AEDD" />
+
+        <TextView
+            android:id="@+id/consentMemoryStatsDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/detailed_memory_stats_logged"
+            android:visibility="gone" />
+
+        <TextView android:id="@+id/consentLearnMore"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="15sp"
+            android:paddingBottom="15sp"
+            android:textAlignment="viewStart"
+            android:textSize="14sp"
+            android:text="@string/learn_more"
+            android:autoLink="web" />
+
+        <CheckBox
+            android:id="@+id/consentCheckBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="I consent to this application collecting the aforementioned data."
+            android:layout_marginBottom="@dimen/title_padding_top" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

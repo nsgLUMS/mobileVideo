@@ -11,22 +11,37 @@ import java.io.FileWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Objects;
 
 public class sendToServer extends JobService {
     int serverResponseCode = 0;
+
+    /*
+     * SERVER_URL
+     *
+     * This is the URL to where the logs are uploaded
+     *
+     * For privacy and security reasons, this is not shared publicly and is replaced by an empty
+     * string before pushing to the public repository. Contact the authors for further correspondence.
+     *
+     * */
+    private static final String SERVER_URL = "";
+
     @Override
     public boolean onStartJob(JobParameters jobParameters) {
         String filename = jobParameters.getExtras().getString("fileName");
         final String deviceConfig = jobParameters.getExtras().getString("deviceConfig");
+        Log.d("upload_NETWORK", "Reached here with " + filename + ", " + deviceConfig);
 
         class OneShotTask implements Runnable {
-            String filename;
+            final String filename;
             OneShotTask(String s) { filename = s; }
             public void run() {
-                if (deviceConfig.equals("false")){
-                    uploadFile("ENTER URI HERE" ,filename); // ENTER SERVER'S ADDRESS HERE
+//                Log.i("upload", "Started upload");
+                if (Objects.requireNonNull(deviceConfig).equals("false")){
+                    uploadFile(SERVER_URL, filename); // ENTER SERVER'S ADDRESS HERE
                 } else {
-                    uploadConfig("ENTER URI HERE" ,filename); // ENTER SERVER'S ADDRESS HERE
+                    uploadConfig(SERVER_URL, filename); // ENTER SERVER'S ADDRESS HERE
                 }
             }
         }
@@ -34,13 +49,15 @@ public class sendToServer extends JobService {
 
         return false;
     }
+
     @Override
     public boolean onStopJob(JobParameters jobParameters) {
+        Log.d("SERVICE", "onStopJob() called with deviceConfig " + jobParameters.getExtras().getString("deviceConfig"));
         return false;
     }
 
     public int uploadFile(String sourceFileUri, String uploadFileName) {
-//        Log.e("Network","Sending to server");
+        Log.i("uploadFile","Sending to server");
 
         String fileName = uploadFileName;
 
@@ -98,13 +115,15 @@ public class sendToServer extends JobService {
                 // read file and write it into form...
                 bytesRead = fileInputStream.read(buffer, 0, bufferSize);
 
+                long totalBytesRead = bytesRead;
+
                 while (bytesRead > 0) {
 
                     dos.write(buffer, 0, bufferSize);
                     bytesAvailable = fileInputStream.available();
                     bufferSize = Math.min(bytesAvailable, maxBufferSize);
                     bytesRead = fileInputStream.read(buffer, 0, bufferSize);
-
+                    totalBytesRead += bytesRead;
                 }
 
                 // send multipart form data necesssary after file data...
@@ -116,7 +135,7 @@ public class sendToServer extends JobService {
                 String serverResponseMessage = conn.getResponseMessage();
 
                 Log.i("uploadFile", "HTTP Response is : "
-                        + serverResponseMessage + ": " + serverResponseCode);
+                        + serverResponseMessage + ": " + serverResponseCode + " bytes read: " + totalBytesRead);
 
 
 
@@ -134,20 +153,21 @@ public class sendToServer extends JobService {
             } catch (MalformedURLException ex) {
 
 
-                Log.e("Upload file to server", "error: " + ex.getMessage(), ex);
+                Log.e("error_uploadFile", "error: " + ex.getMessage(), ex);
             } catch (Exception e) {
 
 
-                Log.e("Upload", "Exception : "
+                Log.e("error_uploadFile", "Exception : "
                         + e.getMessage(), e);
             }
+
             return serverResponseCode;
 
         } // End else block
     }
 
     public int uploadConfig(String sourceFileUri, String uploadFileName) {
-        Log.e("Network","Sending Config to server " + uploadFileName );
+        Log.i("uploadConfig","Sending Config to server " + uploadFileName );
 
         String fileName = uploadFileName;
 
@@ -163,7 +183,7 @@ public class sendToServer extends JobService {
 
         if (!sourceFile.isFile()) {
 
-            Log.e("uploadFile", "Source File not exist :" + uploadFileName);
+            Log.e("uploadConfig", "Source File not exist :" + uploadFileName);
 
             return 0;
 
@@ -221,7 +241,7 @@ public class sendToServer extends JobService {
                 serverResponseCode = conn.getResponseCode();
                 String serverResponseMessage = conn.getResponseMessage();
 
-                Log.i("uploadFile", "HTTP Response is : "
+                Log.i("uploadConfig", "HTTP Response is : "
                         + serverResponseMessage + ": " + serverResponseCode);
 
 
@@ -230,21 +250,21 @@ public class sendToServer extends JobService {
                 fileInputStream.close();
                 dos.flush();
                 dos.close();
-//                if(serverResponseCode == 200){
-//                    String path = this.getExternalFilesDir(null)+uploadFileName;
-////                    System.out.println(new File(path).getAbsoluteFile().delete());
-//                    FileWriter fw = new FileWriter(path,false);
-//                    fw.close();
-//                }
+                if(serverResponseCode == 200){
+                    String path = this.getExternalFilesDir(null)+uploadFileName;
+                    
+                    FileWriter fw = new FileWriter(path,false);
+                    fw.close();
+                }
 
             } catch (MalformedURLException ex) {
 
 
-                Log.e("Upload file to server", "error: " + ex.getMessage(), ex);
+                Log.e("error_uploadConfig", "error: " + ex.getMessage(), ex);
             } catch (Exception e) {
 
 
-                Log.e("Upload", "Exception : "
+                Log.e("error_uploadConfig", "Exception : "
                         + e.getMessage(), e);
             }
             return serverResponseCode;
