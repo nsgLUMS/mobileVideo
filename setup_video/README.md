@@ -86,8 +86,8 @@ sudo cp Manifest* abr-server/manifest/
 
 Replace localhost with your linux machine's local IP address. e.g. if your IP address is 192.168.1.177, run: 
 ```
-sudo sed 's+localhost+192.168.1.177+g' /var/www/html/dash.all.min.js > /var/www/html/dash.all.min.js
-sed 's+localhost+192.168.1.177+g' abr-server/robust_mpc_server.py > abr-server/robust_mpc_server.py
+sudo sed -i 's/localhost/192.168.1.177/g' /var/www/html/dash.all.min.js
+sed -i 's/localhost/192.168.1.177/g' abr-server/robust_mpc_server.py
 ```
 
 Start the ABR server:
