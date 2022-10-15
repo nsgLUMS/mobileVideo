@@ -60,7 +60,7 @@ cd videos
 
 Download video
 ```
-wget https://www.dropbox.com/s/em7r3wx2ugcpnh6/dubai.mkv
+wget https://www.dropbox.com/s/3dh6upbyzyag6ap/dubai.mkv
 ```
 
 Generate the videos:
@@ -79,8 +79,6 @@ Copy mainfests to ABR server:
 mkdir abr-server/manifest
 sudo cp Manifest* abr-server/manifest/
 ```
-
-(The link to the alternate video used in the study (R2) is [this](https://www.dropbox.com/s/syj4ca9uuvuv4gp/laluna.mkv))
 
 ## Usage
 

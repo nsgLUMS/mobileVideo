@@ -7,6 +7,8 @@ import sys
 import os
 import json
 import time
+from datetime import datetime
+import socket
 os.environ['CUDA_VISIBLE_DEVICES']=''
 
 import numpy as np
@@ -25,7 +27,7 @@ M_IN_K = 1000.0
 BUFFER_NORM_FACTOR = 10.0
 CHUNK_TIL_VIDEO_END_CAP = 48.0
 TOTAL_VIDEO_CHUNKS = 44
-DEFAULT_QUALITY = 5  # default video quality without agent
+DEFAULT_QUALITY = 3  # default video quality without agent
 REBUF_PENALTY = 4.3  # 1 sec rebuffering -> this number of Mbps
 SMOOTH_PENALTY = 1
 TRAIN_SEQ_LEN = 100  # take as a train batch
@@ -39,7 +41,7 @@ NN_MODEL = None
 
 CHUNK_COMBO_OPTIONS = []
 
-IP_ADDRESS = 'localhost'
+IP_ADDRESS = '192.168.0.188'
 RESOLUTIONS = {
     240:    0,
     360:    1,
@@ -47,9 +49,19 @@ RESOLUTIONS = {
     720:    3,
     1080:   4,
     1440:   5,
+    'x':    'x',
 }
 
-
+VIDEO_NAMES = [
+    "tennis",
+    "dubai",
+    "dubai_x265",
+    "news",
+    "gaming",
+    "animation",
+    "sitcom",
+    "bali"
+]
 
 # past errors in bandwidth
 past_errors = []
@@ -64,6 +76,24 @@ size_video3 = [1034108, 957685, 877771, 933276, 996749, 801058, 905515, 1060487,
 size_video4 = [668286, 611087, 571051, 617681, 652874, 520315, 561791, 709534, 584846, 560821, 607410, 594078, 624282, 687371, 526950, 587876, 617242, 581493, 639204, 586839, 601738, 616206, 656471, 536667, 587236, 590335, 696376, 487160, 622896, 641447, 570392, 620283, 584349, 670129, 690253, 598727, 487812, 575591, 605884, 587506, 566904, 641452, 599477, 634861, 630203, 638661, 538612, 550906, 391450]
 size_video5 = [450283, 398865, 350812, 382355, 411561, 318564, 352642, 437162, 374758, 362795, 353220, 405134, 386351, 434409, 337059, 366214, 360831, 372963, 405596, 350713, 386472, 399894, 401853, 343800, 359903, 379700, 425781, 277716, 400396, 400508, 358218, 400322, 369834, 412837, 401088, 365161, 321064, 361565, 378327, 390680, 345516, 384505, 372093, 438281, 398987, 393804, 331053, 314107, 255954]
 size_video6 = [181801, 155580, 139857, 155432, 163442, 126289, 153295, 173849, 150710, 139105, 141840, 156148, 160746, 179801, 140051, 138313, 143509, 150616, 165384, 140881, 157671, 157812, 163927, 137654, 146754, 153938, 181901, 111155, 153605, 149029, 157421, 157488, 143881, 163444, 179328, 159914, 131610, 124011, 144254, 149991, 147968, 161857, 145210, 172312, 167025, 160064, 137507, 118421, 112270]
+
+def get_datetime():
+    # date_time = datetime.now().strftime("%m/%d/%Y %I:%M:%S:%f %p")
+    date_time = datetime.now().strftime("%m/%d/%Y %H:%M:%S:%f")
+    return date_time + ' |'
+
+def send_sock_msg():
+    pass
+    # f = open('./organicmem_nokia1_logs/vid-started', 'w')
+    # f.write('something')
+    # f.close()
+
+def play_alarm():
+    freqs = [400, 425, 450, 475, 600]
+    for i in range(5):
+        duration, freq = 0.5, freqs[i]
+        os.system('play -nq -t alsa synth {} sine {}'.format(duration, freq))
+        time.sleep(0.1)
 
 def get_chunk_size(quality, index):
     if ( index < 0 or index > 48 ):
@@ -95,6 +125,31 @@ def make_request_handler(input_dict, fixed_quality=0):
 
         def do_POST(self):
 
+            # global is_started
+
+            # content_length = int(self.headers['Content-Length'])
+            # post_data = json.loads(self.rfile.read(content_length))
+            # print post_data
+            # print 'Frames drop %age: ' + str((float(post_data['droppedFrames'])/float(post_data['totalFrames']))*100) if float(post_data['totalFrames']) > 0 else '0'
+            # print 'FPS: ' + str(post_data['frameRate'])
+            # if post_data['lastRequest'] == 0 and is_started:
+            #     print('crashed')
+            #     os._exit(0)
+
+            # is_started = True
+
+            # # print('[')
+            # # for log in post_data['playbackLog']:
+            # #     if log != None:
+            # #         print '\t{'
+            # #         for i in log:
+            # #             print '\t\t{}: {}'.format(i, log[i])
+            # #         print '\t},'
+            # # print(']')
+            # # print '------------------------'
+            # # print post_data
+            # # print '========================\n'
+
             global is_started
 
             content_length = int(self.headers['Content-Length'])
@@ -106,21 +161,23 @@ def make_request_handler(input_dict, fixed_quality=0):
 
             is_started = True
 
-            print('[')
-            for log in post_data['playbackLog']:
-                if log != None:
-                    print '\t{'
-                    for i in log:
-                        print '\t\t{}: {}'.format(i, log[i])
-                    print '\t},'
-            print(']')
-            print '------------------------'
-            print post_data
-            print '------------------------'
-            print 'Frames drop %age: ' + str((float(post_data['playbackLog'][-1]['droppedFrames'])/float(post_data['playbackLog'][-1]['totalFrames']))*100) if len(post_data['playbackLog']) > 0 and float(post_data['playbackLog'][-1]['totalFrames']) > 0 else '0'
-            print 'FPS: ' + str(post_data['playbackLog'][-1]['frameRate']) if len(post_data['playbackLog']) > 0 else '0'
-            print '========================\n'
-
+            # print('[')
+            # for log in post_data['playbackLog']:
+            #     if log != None:
+            #         print '\t{'
+            #         for i in log:
+            #             print '\t\t{}: {}'.format(i, log[i])
+            #         print '\t},'
+            # print(']')
+            # print '------------------------'
+            # print post_data
+            # print '------------------------'
+            frames_drop_percentage = '{:.2f}'.format(((float(post_data['playbackLog'][-1]['droppedFrames'])/float(post_data['playbackLog'][-1]['totalFrames']))*100) if len(post_data['playbackLog']) > 0 and float(post_data['playbackLog'][-1]['totalFrames']) > 0 else 0.0)
+            frames_drop_ratio = str(post_data['playbackLog'][-1]['droppedFrames']) + '/' + str(post_data['playbackLog'][-1]['totalFrames']) if len(post_data['playbackLog']) > 0 else '0/0'
+            frames_per_second = '{:.2f}'.format((post_data['playbackLog'][-1]['frameRate']) if len(post_data['playbackLog']) > 0 else 0.0)
+            time_elapsed = float(post_data['playbackLog'][-1]['timeElapsed']) if len(post_data['playbackLog']) > 0 else 0.0
+            print '{} {}, {:.2f}s: {}fps\t{}%\t{}'.format(get_datetime(), str(post_data['lastRequest']), time_elapsed, frames_per_second, frames_drop_percentage, frames_drop_ratio)
+            # print (get_datetime()) + 'frame_drop: ' + frames_drop_ratio + ' ' + frames_drop_percentage.zfill(6) + '% | fps: ' + frames_per_second
 
             if ( 'pastThroughput' in post_data ):
                 # @Hongzi: this is just the summary of throughput/quality at the end of the load
@@ -196,6 +253,21 @@ def make_request_handler(input_dict, fixed_quality=0):
                         state = [np.zeros((S_INFO, S_LEN))]
                     else:
                         state = np.array(self.s_batch[-1], copy=True)
+
+                # # log wall_time, bit_rate, buffer_size, rebuffer_time, video_chunk_size, download_time, reward
+                # self.log_file.write(str(time.time()) + '\t' +
+                #                     str(VIDEO_BIT_RATE[post_data['lastquality']]) + '\t' +
+                #                     self.return_x_if_key_not_found(post_data, 'buffer') + '\t' +
+                #                     str(rebuffer_time / M_IN_K) + '\t' +
+                #                     str(video_chunk_size) + '\t' +
+                #                     str(video_chunk_fetch_time) + '\t' +
+                #                     str(reward) + '\t' +
+                #                     # str(json.dumps(post_data['playbackLog'])) + '\n')
+                #                     self.return_x_if_key_not_found(post_data, 'timeFrame') + '\t' +
+                #                     self.return_x_if_key_not_found(post_data, 'droppedFrames') + '\t' +
+                #                     self.return_x_if_key_not_found(post_data, 'totalFrames') + '\t' +
+                #                     self.return_x_if_key_not_found(post_data, 'frameRate') + '\n')
+                # self.log_file.flush()
 
                 # log wall_time, bit_rate, buffer_size, rebuffer_time, video_chunk_size, download_time, reward
                 self.log_file.write(str(time.time()) + '\t' +
@@ -305,6 +377,16 @@ def make_request_handler(input_dict, fixed_quality=0):
                 #     send_data = str(best_combo[0])
 
                 send_data = str(self.fixed_quality)
+                
+                # print post_data['lastRequest']
+                
+                if self.fixed_quality == 'x':
+                    if post_data['lastRequest'] < 8:
+                        send_data = str(3) # 60 fps
+                    elif post_data['lastRequest'] < 8 + 10:
+                        send_data = str(0) # 24 fps
+                    else:
+                        send_data = str(2) # 48 fps
 
                 end = time.time()
                 #print "TOOK: " + str(end-start)
@@ -312,13 +394,14 @@ def make_request_handler(input_dict, fixed_quality=0):
                 end_of_video = False
                 if ( post_data['lastRequest'] == TOTAL_VIDEO_CHUNKS ):
                     print('run ended')
+                    # play_alarm()
                     # os.system("touch done")
                     os._exit(0)
 
                     send_data = "REFRESH"
                     end_of_video = True
                     self.input_dict['last_total_rebuf'] = 0
-                    self.input_dict['last_bit_rate'] = self.fixed_quality
+                    self.input_dict['last_bit_rate'] = self.fixed_quality if self.fixed_quality != 'x' else 3
                     self.input_dict['video_chunk_coount'] = 0
                     self.log_file.write('\n')  # so that in the log we know where video ends
 
@@ -390,6 +473,25 @@ def run(server_class=HTTPServer, port=8333, log_file_path=LOG_FILE, fixed_qualit
         print ('Listening on port ' + str(port))
         httpd.serve_forever()
 
+def set_inits(vid, fps, res):
+    # set the initial chunk in each quality to be of the **fixed** quality we want to play
+    res_id = RESOLUTIONS[res]
+    vid_folder = '/var/www/html/{}_{}fps'.format(vid, fps)
+    vid_orig_inits_folder = '{}/orig_inits/{}'.format(vid_folder, res_id)
+    for i in range(6 if res != 'x' else 4):
+        os.system('sudo cp {}/00001.m4s {}/{}/'.format(vid_orig_inits_folder, vid_folder, i))
+        os.system('sudo cp {}/init-stream.mp4 {}/{}/'.format(vid_orig_inits_folder, vid_folder, i))
+
+def set_inits_for_same_res(vid, fps, start_id=3):
+    pass
+    # set the initial chunk in each quality to be of the **fixed** quality we want to play
+    res_id = start_id
+    vid_folder = '/var/www/html/{}_{}fps'.format(vid, fps)
+    vid_orig_inits_folder = '{}/orig_inits/{}'.format(vid_folder, res_id)
+    for i in range(4):
+        os.system('sudo cp {}/00001.m4s {}/{}/'.format(vid_orig_inits_folder, vid_folder, i))
+        # os.system('sudo cp {}/init-stream.mp4 {}/{}/'.format(vid_orig_inits_folder, vid_folder, i))
+
 def main():
     if len(sys.argv) == 3:
         fps = sys.argv[1]
@@ -400,14 +502,20 @@ def main():
         if resolution not in RESOLUTIONS:
             raise Exception('{}p not avaiable'.format(resolution))
 
+        vid = int(sys.argv[2])
+        if resolution not in RESOLUTIONS:
+            raise Exception('{}p not avaiable'.format(resolution))
+
         os.system('sudo cp manifest/Manifest_{}fps.mpd /var/www/html/Manifest.mpd'.format(str(fps)))
+
+        set_orig_ints(fps, resolution)
 
         log_file_path = '{}/log_video_{}fps{}p_{}'.format(SUMMARY_DIR, fps, str(resolution), str(time.time()))
         
         # DEFAULT_QUALITY=RESOLUTIONS[resolution]
 
         run(log_file_path=log_file_path, fixed_quality=RESOLUTIONS[resolution])
-    
+
     elif len(sys.argv) == 4:
         fps = sys.argv[1]
         if fps not in ['30', '60']:
@@ -421,15 +529,73 @@ def main():
 
         log_file_path = '{}/log_video_{}fps{}p_{}'.format(SUMMARY_DIR, fps, str(resolution), sys.argv[3])
         
-        if os.path.exists(log_file_path):
-            print ('{} already exists, do you want to overwrite it? [y/n]:'.format(log_file_path))
-            if raw_input() == 'y':
-                run(log_file_path=log_file_path, fixed_quality=RESOLUTIONS[resolution])
-        else:
-            run(log_file_path=log_file_path, fixed_quality=RESOLUTIONS[resolution]) 
+        # if os.path.exists(log_file_path):
+        #     print ('{} already exists, do you want to overwrite it? [y/n]:'.format(log_file_path))
+        #     if raw_input() == 'y':
+        #         run(log_file_path=log_file_path, fixed_quality=RESOLUTIONS[resolution])
+        # else:
+        run(log_file_path=log_file_path, fixed_quality=RESOLUTIONS[resolution]) 
+
+    elif len(sys.argv) == 5:
+
+        vid = sys.argv[1]
+        if vid not in VIDEO_NAMES:
+            raise Exception('{} video not available'.format(vid))
+
+        fps = sys.argv[2]
+        if fps not in ['30', '60']:
+            raise Exception('{}fps not available'.format(fps))
+
+        
+        resolution = int(sys.argv[3]) if sys.argv[3] != 'x' else sys.argv[3]
+        if resolution not in RESOLUTIONS:
+            raise Exception('{}p not available'.format(resolution))
+
+        # set the manifest for the video and fps
+        os.system('sudo cp manifest-{}/Manifest_{}fps.mpd /var/www/html/Manifest.mpd'.format(vid, str(fps)))
+        # set the inits for the video quality
+        set_inits(vid, fps, resolution)
+
+        log_file_path = '{}/log_video_{}_{}fps{}p_{}'.format(SUMMARY_DIR, vid, fps, str(resolution), sys.argv[4])
+        
+        # if os.path.exists(log_file_path):
+        #     print ('{} already exists, do you want to overwrite it? [y/n]:'.format(log_file_path))
+        #     if raw_input() == 'y':
+        #         run(log_file_path=log_file_path, fixed_quality=RESOLUTIONS[resolution])
+        # else:
+        run(log_file_path=log_file_path, fixed_quality=RESOLUTIONS[resolution]) 
     
+    elif len(sys.argv) == 6:
+
+        vid = sys.argv[1]
+        if vid not in VIDEO_NAMES:
+            raise Exception('{} video not available'.format(vid))
+
+        fps = sys.argv[2]
+        if fps not in ['30', '48', '60', '1080x', '720x', '480x']:
+            raise Exception('{}fps not available'.format(fps))
+
+        resolution = int(sys.argv[3]) if sys.argv[3] != 'x' else sys.argv[3]
+        if resolution not in RESOLUTIONS:
+            raise Exception('{}p not available'.format(resolution))
+
+        # set the manifest for the video and fps
+        os.system('sudo cp manifest-{}/Manifest_{}fps.mpd /var/www/html/Manifest.mpd'.format(vid, str(fps)))
+        # set the inits for the video quality
+        set_inits(vid, fps, resolution)
+        # set_inits_for_same_res(vid, fps, start_id=3)
+
+        log_file_path = '{}/log_video_{}_{}fps{}p_{}'.format(sys.argv[5], vid, fps, str(resolution), sys.argv[4])
+        
+        # if os.path.exists(log_file_path):
+        #     print ('{} already exists, do you want to overwrite it? [y/n]:'.format(log_file_path))
+        #     if raw_input() == 'y':
+        #         run(log_file_path=log_file_path, fixed_quality=RESOLUTIONS[resolution])
+        # else:
+        run(log_file_path=log_file_path, fixed_quality=RESOLUTIONS[resolution]) 
+
     else:
-        print "pass fps and resolution as args"
+        print "args not passed correct"
 
 
 if __name__ == "__main__":

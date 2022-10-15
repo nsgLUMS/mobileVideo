@@ -1,0 +1,5 @@
+# Performance under organic memory pressure.
+
+In §4.1, we emulate different memory pressure regimes in our experiments through a custom Android application that allocates memory until a target memory pressure regime is reached. To evaluate whether video performs similarly under memory pressure present in the wild, we evaluated video performance under organically generated memory pressure through background applications. We conducted our experiments on the Nokia 1 device. For Normal memory pressure state, we did not open background application whereas for inducing Moderate memory pressure state we opened 8 background applications before opening the browser to run the video. These background applications were selected from the top free applications available on Google Play Store and did not include any game.
+
+`parse_logs.ipynb` uses the log files in this directory to generate results reported in the paper.
